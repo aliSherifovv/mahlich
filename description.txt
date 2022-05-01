@@ -1,0 +1,19 @@
+"Mahlich" was created in order to show skills in the e-commerce area. The project is mainly 
+focused on functionality and not so much on design. However, every component in the structure 
+was styled in SCSS then compiled to CSS through VSCODE extension. The website is responsive and suitable for all devices.
+
+Languages: HTML, CSS and JavaScript
+
+The project shows usage of: 
+- SCSS
+- Window object
+- Array methods 
+- Local storage
+- DOM manipulation
+- Dates
+- Sets
+- Asynchronous function
+- Mathematical operations
+- NPM
+
+*** Free API was not available, so data was manually created ***

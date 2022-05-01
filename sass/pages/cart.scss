@@ -1,0 +1,118 @@
+@import "../main.scss";
+
+nav {
+  position: static;
+  .logo {
+    color: $black-color;
+  }
+  .links li a {
+    color: $black-color;
+  }
+}
+
+.layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.6rem;
+  background-color: $white-color;
+  color: $black-color;
+  box-shadow: 0 0 5px rgba($black-color, 0.5);
+  padding: 2rem 4rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.purchased-products {
+  min-height: 60vh;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 5rem 10rem;
+}
+.message {
+  font-size: 2.6rem;
+  font-weight: bold;
+}
+.purchased-product {
+  @include centerXY;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  width: 100%;
+  img {
+    height: 20vh;
+  }
+  p {
+    &:nth-child(4) {
+      text-transform: uppercase;
+    }
+  }
+  i {
+    cursor: pointer;
+  }
+}
+.finish-purchase {
+  margin: 0 5rem 2rem 10rem;
+  text-transform: uppercase;
+  background-color: $red-color;
+  color: $white-color;
+  border: 1px solid $red-color;
+  cursor: pointer;
+}
+.clear-purchase {
+  text-transform: uppercase;
+  color: $black-color;
+  background-color: $white-color;
+  border: 1px solid $black-color;
+  cursor: pointer;
+}
+.total-price {
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: bold;
+  float: right;
+  padding: 0 10rem 0 0;
+}
+
+@media (max-width: 81em) {
+  .purchased-products {
+    width: 80%;
+    margin: 5rem 6rem;
+  }
+  .finish-purchase {
+    margin: 0 5rem 2rem 6rem;
+  }
+}
+@media (max-width: 59em) {
+  html {
+    font-size: 56.25%;
+  }
+  .purchased-products {
+    width: 90%;
+    margin: 5rem 3rem;
+  }
+}
+@media (max-width: 48em) {
+  .purchased-product {
+    img {
+      height: 15vh;
+    }
+  }
+  .total-price {
+    float: none;
+    display: block;
+    margin: 0 0 1rem 6rem;
+  }
+}
+@media (max-width: 31em) {
+  html {
+    font-size: 50%;
+  }
+  .purchased-products {
+    width: 100%;
+    margin: 5rem 0;
+  }
+}

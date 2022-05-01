@@ -1,0 +1,356 @@
+@import "../main.scss";
+/*HEADER*/
+header {
+  padding-left: 30rem;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba($black-color, 0.8),
+      rgba($black-color, 0.6)
+    ),
+    url("../../images/cover.jpg");
+  background-position: center;
+  background-size: cover;
+  @include centerXY;
+  align-items: stretch;
+  flex-direction: column;
+  color: $white-color;
+  h1 {
+    margin: 0 0 2rem;
+    font-weight: bold;
+    font-size: 11rem;
+    line-height: 0.9;
+  }
+  h2 {
+    margin: 0 0 4rem;
+    font-size: 2.8rem;
+    font-weight: 400;
+  }
+}
+.show-products {
+  margin: 0 auto 0 0;
+  background-color: $white-color;
+  transition: all 0.5s ease;
+  color: $black-color;
+  animation: buttonUp 1.5s ease;
+  &:hover {
+    transform: translateY(5px);
+  }
+}
+
+/*PRODUCTS SECTION*/
+.products-section {
+  padding: 10rem;
+  position: relative;
+}
+.filters {
+  @include centerXY;
+  align-items: flex-start;
+  gap: 3.6rem;
+  margin: 0 0 5rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  div {
+    width: 15rem;
+    p {
+      cursor: pointer;
+      font-size: 2rem;
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+    }
+    ul {
+      list-style: none;
+      box-shadow: 0 0 3px rgba($black-color, 0.5);
+      list-style: none;
+      display: none;
+      background-color: $white-color;
+      &.active {
+        display: block;
+      }
+      li {
+        font-size: 1.6rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        padding: 0.5rem 1.5rem;
+        text-transform: capitalize;
+        font-size: 1.6rem;
+        text-transform: capitalize;
+        &:hover {
+          background-color: $black-color;
+          color: $white-color;
+        }
+      }
+    }
+  }
+  .size ul li {
+    text-transform: uppercase;
+  }
+}
+
+.clear {
+  font-size: 1.6rem;
+  background-color: $white-color;
+  color: $black-color;
+  outline: 1px solid $black-color;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem 2rem;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 16rem;
+  row-gap: 10rem;
+  margin: 10rem 0 0;
+}
+.product {
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.name {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+}
+.price-wrapper {
+  font-size: 2rem;
+}
+.price {
+  text-decoration: line-through;
+  color: $red-color;
+}
+.current-price {
+  font-weight: bold;
+}
+.sale {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "SALE";
+    padding: 0.8rem;
+    width: 15rem;
+    text-align: center;
+    background-color: $red-color;
+    color: $white-color;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 2%;
+    right: -20%;
+    transform: rotate(45deg);
+  }
+}
+.pagination {
+  list-style: none;
+  @include centerXY;
+  gap: 2rem;
+  margin: 5rem 0 0;
+  li {
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1.5rem;
+  }
+}
+.current-page {
+  background-color: $black-color;
+  color: $white-color;
+}
+.turn-off {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*SUBSCRIPTION SECTION*/
+.subscription-section {
+  background-color: $light-grey-color;
+  padding: 10rem;
+}
+.subscription-box {
+  width: 100%;
+  background-color: $white-color;
+  padding: 3rem 5rem 2rem;
+  h3 {
+    font-weight: bold;
+    font-size: 2.8rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+}
+.email-part {
+  display: flex;
+  gap: 4rem;
+  margin: 2.5rem 0 0;
+}
+.email-address {
+  width: 25%;
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+  padding: 1rem 3rem;
+  border-radius: 0;
+  border: 1px solid $dark-grey-color;
+  &::placeholder {
+    color: $dark-grey-color;
+    font-size: 1.6rem;
+  }
+}
+.subscribe {
+  background-color: $black-color;
+  color: $white-color;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $white-color;
+    color: $black-color;
+    outline: 1px solid $black-color;
+  }
+}
+
+/*!Responsive*/
+@media (max-width: 102em) {
+  .products {
+    column-gap: 10rem;
+    row-gap: 8rem;
+  }
+}
+@media (max-width: 88em) {
+  .products-section {
+    padding: 6rem 10rem;
+  }
+  .products {
+    column-gap: 6rem;
+  }
+  .subscription-section {
+    padding: 6rem 10rem;
+  }
+  .email-address {
+    width: 30%;
+  }
+}
+@media (max-width: 75em) {
+  header {
+    padding-left: 20rem;
+  }
+  .products-section,
+  .subscription-section {
+    padding: 6rem;
+  }
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10rem;
+  }
+}
+@media (max-width: 66em) {
+  .products {
+    column-gap: 6rem;
+    row-gap: 6rem;
+    margin: 8rem 0 0;
+  }
+  .email-address {
+    width: 40%;
+  }
+}
+@media (max-width: 54em) {
+  html {
+    font-size: 56.25%;
+  }
+  header {
+    height: 80vh;
+    padding-left: 15rem;
+  }
+  .products {
+    column-gap: 4rem;
+  }
+  .subscription-section p {
+    font-size: 1.4rem;
+  }
+  .email-address {
+    width: 50%;
+  }
+}
+@media (max-width: 45em) {
+  header h1 {
+    font-size: 10rem;
+  }
+  header h2 {
+    font-size: 2.6rem;
+  }
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8rem;
+  }
+  .email-address {
+    padding: 1rem 1.5rem;
+  }
+}
+@media (max-width: 38em) {
+  html {
+    font-size: 50%;
+  }
+  header {
+    padding: 0;
+    align-items: center;
+  }
+  header h1 {
+    text-align: center;
+  }
+  .show-products {
+    margin: 0;
+  }
+  .filters {
+    div {
+      width: 10rem;
+    }
+  }
+  .products {
+    column-gap: 6rem;
+    row-gap: 4rem;
+  }
+  .email-part {
+    gap: 0rem;
+  }
+  .email-address {
+    width: 60%;
+  }
+}
+@media (max-width: 32em) {
+  .products {
+    column-gap: 4rem;
+  }
+  .email-address {
+    width: 100%;
+  }
+  .email-part {
+    flex-direction: column;
+  }
+}
+@media (max-width: 25em) {
+  header h1 {
+    font-size: 8rem;
+  }
+  header h2 {
+    font-size: 2.4rem;
+  }
+  .filters {
+    gap: 1rem;
+  }
+  .filters div p {
+    @include centerXY;
+    align-items: stretch;
+  }
+  .products-section,
+  .subscription-section {
+    padding: 4rem;
+  }
+  .products {
+    column-gap: 2rem;
+  }
+}

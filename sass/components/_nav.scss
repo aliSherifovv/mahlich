@@ -1,0 +1,21 @@
+nav {
+  width: 100%;
+  @include centerXY;
+  justify-content: space-between;
+  padding: 3rem 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .links li a {
+    color: $white-color;
+    &:hover {
+      color: $dark-grey-color;
+    }
+  }
+}
+
+@media (max-width: 75em) {
+  nav {
+    padding: 3rem 6rem;
+  }
+}
